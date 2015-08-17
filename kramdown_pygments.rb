@@ -51,7 +51,7 @@ module Kramdown
         end
         "<code#{html_attributes(attr)}>#{code}</code>"
       end
-      
+
       def pygmentize(code, lang)
         if lang
           Pygments.highlight(code,
@@ -85,7 +85,8 @@ class Jekyll::Converters::Markdown::KramdownPygments
         :toc_levels           => @config['kramdown']['toc_levels'],
         :smart_quotes         => @config['kramdown']['smart_quotes'],
         :kramdown_default_lang => @config['kramdown']['default_lang'],
-        :input                => @config['kramdown']['input']
+        :input                => @config['kramdown']['input'],
+        :hard_wrap            => @config['kramdown']['hard_wrap']
     }).to_pygments_html
     return html;
   end
